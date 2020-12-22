@@ -22,7 +22,9 @@ public class Player : MonoBehaviour
     void Awake()
     {
         GameObject.Find("JumpBtn").GetComponent<Button>().onClick.AddListener(() => Jump());
+        //GameObject.Find("BoostBtn").GetComponent<Button>().onClick.AddListener(() => Invulnerable());
         anim = GetComponent<Animator>();
+
 
         onRight = true;
         onLeft = false;
@@ -40,7 +42,7 @@ public class Player : MonoBehaviour
                 {
                     anim.Play("RunRight");
                 }
-                else
+                else if (onLeft)
                 {
                     anim.Play("RunLeft");
                 }
@@ -51,7 +53,7 @@ public class Player : MonoBehaviour
                 {
                     anim.Play("JumpLeft");
                 }
-                else
+                else if (onLeft)
                 {
                     anim.Play("JumpRight");
                 }
@@ -70,7 +72,7 @@ public class Player : MonoBehaviour
             {
                 anim.Play("JumpLeft");
             }
-            else
+            else if (onLeft)
             {
                 anim.Play("JumpRight");
             }
@@ -110,11 +112,22 @@ public class Player : MonoBehaviour
         {
             anim.Play("PlayerDiedLeft");
         }
+        
+
+
 
         GameplayController.instance.GameOver();
 
         Time.timeScale = 0f;
+
+        
+
     }
+
+    //void Invulnerable()
+    //{
+
+    //}
 
     void OnTriggerEnter2D(Collider2D target)
     {
@@ -123,6 +136,7 @@ public class Player : MonoBehaviour
             if(target.tag == "Enemy")
             {
                 target.gameObject.SetActive(false);
+                GameplayController.instance.AddScore(20);
                 audioKill.Play();
             }
         }
@@ -131,12 +145,20 @@ public class Player : MonoBehaviour
             if(target.tag == "Enemy")
             {
                 PlayerDied();
+
             }
         }
 
         if(target.tag == "EnemyTree")
         {
             PlayerDied();
+        }
+
+        if (target.tag == "Banana")
+        {
+            target.gameObject.SetActive(false);
+            GameplayController.instance.AddScore(50);
+            audioKill.Play();
         }
     }
 }

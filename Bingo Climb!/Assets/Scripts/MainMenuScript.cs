@@ -10,6 +10,11 @@ public class MainMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("Gameplay");
     }
+
+    public void ViewLeaderBoards()
+    {
+        SceneManager.LoadScene("LeaderBoards");
+    }
     // Start is called before the first frame update
     void Start()
     {

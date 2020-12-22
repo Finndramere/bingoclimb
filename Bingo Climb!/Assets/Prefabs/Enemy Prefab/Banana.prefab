@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4911883409191310519}
   - component: {fileID: 4911883409191310516}
   - component: {fileID: -6143111912416806720}
+  - component: {fileID: 1053693696}
   m_Layer: 0
-  m_Name: Tree
-  m_TagString: EnemyTree
+  m_Name: Banana
+  m_TagString: Banana
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4911883409191310517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.86, y: 0.8, z: -1}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: -4.86, y: 0.8, z: 0}
+  m_LocalScale: {x: 0.08625996, y: 0.101364404, z: 0.45657805}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,12 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c652e58cfd1226e478b0e282500a353b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7e44a0ac06504f499235c50ff1c23da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.8, y: 10.24}
+  m_Size: {x: 9.58, y: 9.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,18 +98,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.51, y: -1}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.8, y: 10.24}
-    newSize: {x: 12.8, y: 10.24}
+    oldSize: {x: 9.58, y: 9.58}
+    newSize: {x: 9.58, y: 9.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.43, y: 3.44}
+  m_Size: {x: 8.94, y: 6.45}
   m_EdgeRadius: 0
 --- !u!114 &-6143111912416806720
 MonoBehaviour:
@@ -117,9 +118,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4911883409191310517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1667a4e92dddd0042b083e6de30482f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+--- !u!114 &1053693696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911883409191310517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421d2e97943a17e47bdcb3f7c69e667c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5

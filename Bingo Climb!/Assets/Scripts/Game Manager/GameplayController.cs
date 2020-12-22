@@ -48,7 +48,7 @@ public class GameplayController : MonoBehaviour
     public void GameOver()
     {
         scorePanel.SetActive(false);
-        endScore.text = "Height: " + score;
+        endScore.text = "Score: " + score;
         endPanelAnim.Play("EndPanel");
     }
 
@@ -62,5 +62,10 @@ public class GameplayController : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void AddScore(int addscore)
+    {
+        score += addscore;
     }
 }
