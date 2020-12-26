@@ -11,9 +11,10 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
-    public void ViewLeaderBoards()
+    public void Quit()
     {
-        SceneManager.LoadScene("LeaderBoards");
+        Debug.Log("QUIT!");
+        Application.Quit();
     }
     // Start is called before the first frame update
     void Start()

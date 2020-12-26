@@ -17,9 +17,11 @@ public class BGMover : MonoBehaviour
     public GameObject[] enemies;
     public GameObject[] spawnPositions;
 
+
     // Start is called before the first frame update
     void Awake()
     {
+        
         sideBounds = GameObject.FindGameObjectsWithTag("SideBound");
         cameraY = Camera.main.gameObject.transform.position.y-15;
 
@@ -27,13 +29,18 @@ public class BGMover : MonoBehaviour
 
     }
 
+    
+
     // Update is called once per frame
     void Update()
     {
         Move();
         Reposition();
+
     }
 
+
+    
     void Move() {
         Vector3 temp = transform.position;
         temp.y -= moveSpeed * Time.deltaTime;

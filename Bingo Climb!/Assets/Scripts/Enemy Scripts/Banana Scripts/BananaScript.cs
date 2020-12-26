@@ -11,7 +11,7 @@ public class BananaScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cameraY = Camera.main.transform.position.y - 10f;
+        cameraY = Camera.main.transform.position.y - 100f;
     }
 
     // Update is called once per frame
