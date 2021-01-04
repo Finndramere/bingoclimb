@@ -1,6 +1,6 @@
 # BingoClimb
 
-Members:
+Members:  
 John Robert Untalan  
 Jeric Frias  
 Abel Bane  
