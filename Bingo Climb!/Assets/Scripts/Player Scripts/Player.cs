@@ -11,10 +11,10 @@ public class Player : MonoBehaviour
     private bool jumped;
 
     [SerializeField]
-    AudioSource audioKill, audioJump;
+    AudioSource audioKill = null, audioJump = null;
 
     [SerializeField]
-    private AudioClip deadSound;
+    private AudioClip deadSound = null;
 
     private bool isAlive = true;
 

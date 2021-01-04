@@ -7,10 +7,16 @@ using UnityEngine.SceneManagement;
 public class GameplayController : MonoBehaviour
 {
     public static GameplayController instance;
+    
     // Start is called before the first frame update
+    //[SerializeField] private HighscoreTable highscoreTable;
 
     private Text scoreText;
+    private Text scoreSubmitted;
+    private InputField textInput;
+    private Button submitbutton;
     private int score;
+    private string playername;
 
     public GameObject scorePanel;
 
@@ -20,11 +26,14 @@ public class GameplayController : MonoBehaviour
     void Awake()
     {
         MakeInstance();
+        
     }
 
     void Start()
     {
-        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
+        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();   
+        textInput = GameObject.Find("NameInputField").GetComponent<InputField>();
+        submitbutton = GameObject.Find("Submit").GetComponent<Button>();
         StartCoroutine(CountScore());
     }
 
@@ -67,5 +76,17 @@ public class GameplayController : MonoBehaviour
     public void AddScore(int addscore)
     {
         score += addscore;
+    }
+
+    public void SubmitScore()
+    {
+        playername = textInput.text;
+        OnlineHighscores.AddNewHighscore(playername, score);
+        Debug.Log("OnlineScore Recorded");
+
+        submitbutton.interactable = false;
+
+        textInput.interactable = false;
+
     }
 }
